@@ -1,14 +1,15 @@
 # wordpress-twentyseventeen-excerpt
-Show excerpts in WordPress category overview. As cards or thumbnails. Based on twentyseventeen.
 
-Adds category excerpts to theme Twentyseventeen
-===============================================
+Adds excerpts to the Wordpress twentyseventeen theme.  The category overview will now use excerpts instead of the full post.
 
-Child Theme for the Twentyseventeen WordPress theme.
+## Install
 
-### Usage
 Simply download the zip and upload the zip under your WordPress dashboard at Appearance > Themes. Or extract and upload via FTP at wp-content/themes/.
 
-The main part is category.php, what now displays excerpts as cards or thumbnails.  Configurable through Appearance > Customize > Theme Options.
+## Configure
+
+Configurable through Appearance > Customize > Theme Options.
+
+## Screen shot
 
 ![Screenshot](screenshot.png?raw=true "Screenshot")
