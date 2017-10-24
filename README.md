@@ -4,7 +4,10 @@ Adds excerpts to the Wordpress twentyseventeen theme.  The category overview wil
 
 ## Install
 
-Download the zip from GitHub and upload it using your WordPress dashboard at Appearance > Themes. Or extract and upload via FTP/SCP at wp-content/themes/.
+1. First install the standard twentyseventeen theme using your WordPress dashboard at Appearance > Themes.
+
+2. Then download the zip from GitHub and upload it. (Or, extract and upload via FTP/SCP at wp-content/themes/) 
+
 
 ## Configure
 
