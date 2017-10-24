@@ -1,10 +1,10 @@
 # wordpress-twentyseventeen-excerpt
 
-Adds excerpts to the Wordpress twentyseventeen theme.  The category overview will now use excerpts instead of the full post.
+Adds excerpts to the Wordpress twentyseventeen theme.  The category overview will show excerpts instead of the full post.
 
 ## Install
 
-Simply download the zip and upload the zip under your WordPress dashboard at Appearance > Themes. Or extract and upload via FTP at wp-content/themes/.
+Download the zip from GitHub and upload it using your WordPress dashboard at Appearance > Themes. Or extract and upload via FTP/SCP at wp-content/themes/.
 
 ## Configure
 
