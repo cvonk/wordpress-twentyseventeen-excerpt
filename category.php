@@ -23,6 +23,20 @@ add_action( 'wp_enqueue_scripts', 'cvonk_thumb_enqueue_category_script');
 
 {
     get_header();
+
+    // Load More, JavaScript
+    // @link https://www.billerickson.net/infinite-scroll-in-wordpress/
+    if ( get_theme_mod('cvonk_thumb_loadmore')) {
+	global $wp_query;
+	$args = array(
+	    'nonce' => wp_create_nonce( 'cvonk-thumb-loadmore-nonce' ),
+	    'url'   => admin_url( 'admin-ajax.php' ),
+	    'query' => $wp_query->query,
+	);
+
+	wp_enqueue_script( 'cvonk-thumb-loadmore', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
+	wp_localize_script( 'cvonk-thumb-loadmore', 'cvonk_thumb_loadmore', $args );
+    }
     
     echo '<div class="wrap">';
     

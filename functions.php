@@ -42,26 +42,6 @@ function cvonk_thumb_category_excerpt() {
 
 
 /**
- * Load More, JavaScript
- * @link https://www.billerickson.net/infinite-scroll-in-wordpress/
- */
-function cvonk_thumb_loadmore_js() {
-    if ( get_theme_mod('cvonk_thumb_loadmore')) {
-	global $wp_query;
-	$args = array(
-	    'nonce' => wp_create_nonce( 'cvonk-thumb-loadmore-nonce' ),
-	    'url'   => admin_url( 'admin-ajax.php' ),
-	    'query' => $wp_query->query,
-	);
-
-	wp_enqueue_script( 'cvonk-thumb-loadmore', get_stylesheet_directory_uri() . '/js/load-more.js', array( 'jquery' ), '1.0', true );
-	wp_localize_script( 'cvonk-thumb-loadmore', 'cvonk_thumb_loadmore', $args );
-    }
-}
-add_action( 'wp_enqueue_scripts', 'cvonk_thumb_loadmore_js' );
-
-
-/**
  * Load More, Asynchronous JavaScript
  * @link https://www.billerickson.net/infinite-scroll-in-wordpress/
  */
