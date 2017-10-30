@@ -134,6 +134,10 @@ p {
 9.0 Tables
 --------------------------------------------------------------*/
 
+table {
+    width: 0;
+}
+
 div.post table caption {
     width: auto;
     margin: 0 auto;
@@ -169,7 +173,12 @@ article.post a:active > img {
         background-color: white;
 }
 
-article.post a.hideAnchor {
+article.post a.hideAnchor,
+article.post a[href$=jpg],
+article.post a[href$=jpeg],
+article.post a[href$=svg],
+article.post a[href$=png],
+article.post a[href$=gif] {
     border-bottom: 0 !important;
     -webkit-transition-property: none !important;
     transition-property: none !important;
@@ -178,7 +187,6 @@ article.post a.hideAnchor {
     transition: none;
     text-decoration: none;
 }
-
 
 .entry-content a,
 .entry-content a,
@@ -210,7 +218,8 @@ article.post a.hideAnchor {
    text-decoration: none;
 }
 
-.entry-content a > img {
+/*.entry-content */
+a > img {
    box-shadow: none;
    transition: none;
    text-decoration: none;

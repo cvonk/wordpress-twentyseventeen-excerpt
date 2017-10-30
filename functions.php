@@ -17,10 +17,12 @@ function cvonk_thumb_category_excerpt() {
 
     $thumbnail_categories = explode(',', get_theme_mod('cvonk_thumb_categories'));
     $style = "style1";
+    $style1 = true;
     foreach($thumbnail_categories as $thumb_category_id) {
 	$thumb_category = &get_category((int)$thumb_category_id);
 	if( !strcasecmp($thumb_category->slug, $this_category)) {
 	    $style = "style2";
+	    $style1 = false;
 	}
     }
     echo '<article class="post ' . $style . ' mask-triangle zoom-rotate-photo">';
@@ -33,10 +35,13 @@ function cvonk_thumb_category_excerpt() {
     echo '      <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>';
     echo '    </svg></a></div>';
     echo '  <div class="article-text">';
-    echo '    <a href="' . get_the_permalink() . '" rel="bookmark" title="Permanent link">' . get_the_title() . '</a>';
-    echo '    <span>' . preg_replace('|<a.*?/a>|', '', get_the_excerpt()) . '</span></div>';
-    echo '  <div class="article-footer">By ' . get_the_author() . '  |  ';
-    edit_post_link();
+    echo '    <a class="text-title" href="' . get_the_permalink() . '" rel="bookmark" title="Permanent link">' . get_the_title() . '</a>';
+    echo '    <span class="text-excerpt">' . preg_replace('|<a.*?/a>|', '', get_the_excerpt()) . '</span>';
+    if ($style1) {
+	echo '    <div class="text-footer">By ' . get_the_author() . '  |  ';
+	edit_post_link();
+	echo '</div>';
+    }
     echo '  </div></article>';
 }
 
